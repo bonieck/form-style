@@ -12,10 +12,6 @@
     background: #000;
 }
 
-.neve-main {
-    width: ;
-}
-
 .nv-page-title h1::after{
     content: '';
     display: block;
@@ -29,29 +25,16 @@
 }
 
 
-
-.label{
-    border: none;
-    border-radius: 15px;
-    box-shadow: 1px 1px 6px #0000001c);
+input {
+    box-shadow: 1px 1px 6px #0000001c;
 }
 
-.input-box input:hover{
+input:hover{
     background-color: #eeeeee75;
 }
 
-.input-box input:focus-visible{
+input:focus-visible{
     outline: 1px solid #104d8a;
 }
 
-.input-box label,
-.gernder-title h6{
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #0000001c;
-}
-
-.input-box input::placeholder{
-    color: #000000be;   
-}
 
