@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.body {
+    background: #000;
+}
+
+.neve-main {
+    width: ;
+}
+
+.nv-page-title h1::after{
+    content: '';
+    display: block;
+    width: 9rem;
+    height: 0.35rem;
+    background-color: #104d8a;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px -1px rgba(0,0,0,0.75);
+}
+
+
+
+.label{
+    border: none;
+    border-radius: 15px;
+    box-shadow: 1px 1px 6px #0000001c);
+}
+
+.input-box input:hover{
+    background-color: #eeeeee75;
+}
+
+.input-box input:focus-visible{
+    outline: 1px solid #104d8a;
+}
+
+.input-box label,
+.gernder-title h6{
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #0000001c;
+}
+
+.input-box input::placeholder{
+    color: #000000be;   
+}
+

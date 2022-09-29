@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="shortcut icon" href="https://www.ctec.com.br/wp-content/themes/ctec/library/images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulário de Contato &#8211; CTEC</title>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+            //event.preventDefault();
+            var $ = jQuery;
+
+            //masks
+            $('#2').mask('000.000.000-00', { reverse: true });
+            $('#2').mask('00.000.000/0000-00', { reverse: true })
+            $('#7').mask('(00) 0000-0000');    //telefone1
+            $('#8').mask('(00) 90000-0000');   //celular1
+            $('#16').mask('(00) 0000-0000');   //telefone2
+            $('#17').mask('(00) 90000-0000');  //celular2
+            //$('#9').mask(''); //email
+            $('#10').mask('00000-000');
+
+            //selects  
+            var field = $('#20');
+            field.find('option').remove();
+
+            $.each([{ "CD_ATV": "2", "NM_ATV": "Com\u00e9rcio " }, { "CD_ATV": "3", "NM_ATV": "Comercio Eletr\u00f4nico" }, { "CD_ATV": "1", "NM_ATV": "Ind\u00fastria" }, { "CD_ATV": "4", "NM_ATV": "Servi\u00e7os" }], function (i, d) {
+                $('<option>').val(d.CD_ATV).text(d.NM_ATV).appendTo(field);
+            })
+
+            var field = $('#21');
+
+            field.find('option').remove();
+
+            $.each([{ "CD_SEG": "1", "NM_SEG": "Alimenta\u00e7\u00e3o e Bebidas" }, { "CD_SEG": "8", "NM_SEG": "Beleza" }, { "CD_SEG": "3", "NM_SEG": "Constru\u00e7\u00e3o" }, { "CD_SEG": "5", "NM_SEG": "Educa\u00e7\u00e3o" }, { "CD_SEG": "11", "NM_SEG": "Entreterimento" }, { "CD_SEG": "10", "NM_SEG": "Inform\u00e1tica" }, { "CD_SEG": "12", "NM_SEG": "Marketing" }, { "CD_SEG": "4", "NM_SEG": "Sa\u00fade" }, { "CD_SEG": "7", "NM_SEG": "Servi\u00e7os Especializados" }, { "CD_SEG": "6", "NM_SEG": "Servi\u00e7os Pessoais" }, { "CD_SEG": "9", "NM_SEG": "Vendas" }, { "CD_SEG": "2", "NM_SEG": "Vestu\u00e1rio e Cal\u00e7ados" }], function (i, d) {
+
+                $('<option>').val(d.CD_SEG).text(d.NM_SEG).appendTo(field);
+
+            })
+
+
+
+            var field = $('#22');
+
+            field.find('option').remove();
+
+            $.each([{ "CD_EST": "12", "NM_EST": "ACRE", "NM_SGL": "AC" }, { "CD_EST": "27", "NM_EST": "ALAGOAS", "NM_SGL": "AL" }, { "CD_EST": "13", "NM_EST": "AMAZONAS", "NM_SGL": "AM" }, { "CD_EST": "16", "NM_EST": "AMAPA", "NM_SGL": "AP" }, { "CD_EST": "29", "NM_EST": "BAHIA", "NM_SGL": "BA" }, { "CD_EST": "23", "NM_EST": "CEARA", "NM_SGL": "CE" }, { "CD_EST": "53", "NM_EST": "DISTRITO FEDERAL", "NM_SGL": "DF" }, { "CD_EST": "32", "NM_EST": "ESPIRITO SANTO", "NM_SGL": "ES" }, { "CD_EST": "99", "NM_EST": "EXTERIOR", "NM_SGL": "EX" }, { "CD_EST": "52", "NM_EST": "GOIAS", "NM_SGL": "GO" }, { "CD_EST": "21", "NM_EST": "MARANHAO", "NM_SGL": "MA" }, { "CD_EST": "31", "NM_EST": "MINAS GERAIS", "NM_SGL": "MG" }, { "CD_EST": "50", "NM_EST": "MATO GROSSO DO SUL", "NM_SGL": "MS" }, { "CD_EST": "51", "NM_EST": "MATO GROSSO", "NM_SGL": "MT" }, { "CD_EST": "15", "NM_EST": "PARA", "NM_SGL": "PA" }, { "CD_EST": "25", "NM_EST": "PARAIBA", "NM_SGL": "PB" }, { "CD_EST": "26", "NM_EST": "PERNAMBUCO", "NM_SGL": "PE" }, { "CD_EST": "22", "NM_EST": "PIAUI", "NM_SGL": "PI" }, { "CD_EST": "41", "NM_EST": "PARANA", "NM_SGL": "PR" }, { "CD_EST": "33", "NM_EST": "RIO DE JANEIRO", "NM_SGL": "RJ" }, { "CD_EST": "24", "NM_EST": "RIO GRANDE DO NORTE", "NM_SGL": "RN" }, { "CD_EST": "11", "NM_EST": "RONDONIA", "NM_SGL": "RO" }, { "CD_EST": "14", "NM_EST": "RORAIMA", "NM_SGL": "RR" }, { "CD_EST": "43", "NM_EST": "RIO GRANDE DO SUL", "NM_SGL": "RS" }, { "CD_EST": "42", "NM_EST": "SANTA CATARINA", "NM_SGL": "SC" }, { "CD_EST": "28", "NM_EST": "SERGIPE", "NM_SGL": "SE" }, { "CD_EST": "35", "NM_EST": "SAO PAULO", "NM_SGL": "SP" }, { "CD_EST": "17", "NM_EST": "TOCANTINS", "NM_SGL": "TO" }], function (i, d) {
+
+                $('<option>').val(d.CD_EST).text(d.NM_SGL).appendTo(field);
+
+            })
+
+
+
+            $('#22').on('click', function () {
+
+                $('#23').prop('disabled', false);
+
+            });
+
+
+
+            $('#23').prop('disabled', true);
+
+
+
+            //preenchendo cidades através dos estado selecionado
+
+            var el = document.querySelector(".atr-estado select");
+
+            el.addEventListener('change', function () {
+
+
+                var elSelecionado = el.selectedOptions[0].value;
+
+                $.getJSON("?id=" + elSelecionado + "&op=1", function (cidades, status) {
+
+                    var field = $('#23');
+
+                    field.find('option').remove();
+
+                    $.each(cidades, function (i, d) {
+
+                        $('<option>').val(d.CD_CID).text(d.NM_CID).appendTo(field);
+
+                    });
+
+
+
+                });
+
+
+
+            });
+
+            //xmlhttp = new XMLHttpRequest();
+            //xmlhttp.open("GET","/contact-form.php?id="+elSelecionado,true);
+            //xmlhttp.send();
+
+            var field = $('#24');
+
+            field.find('option').remove();
+
+            $.each([{ "CD_PAI": "132", "NM_PAI": "AFEGANISTAO" }, { "CD_PAI": "7560", "NM_PAI": "AFRICA DO SUL" }, { "CD_PAI": "175", "NM_PAI": "ALBANIA, REPUBLICA  DA" }, { "CD_PAI": "230", "NM_PAI": "ALEMANHA" }, { "CD_PAI": "370", "NM_PAI": "ANDORRA" }, { "CD_PAI": "400", "NM_PAI": "ANGOLA" }, { "CD_PAI": "418", "NM_PAI": "ANGUILLA" }, { "CD_PAI": "434", "NM_PAI": "ANTIGUA E BARBUDA" }, { "CD_PAI": "477", "NM_PAI": "ANTILHAS HOLANDESAS" }, { "CD_PAI": "531", "NM_PAI": "ARABIA SAUDITA" }, { "CD_PAI": "590", "NM_PAI": "ARGELIA" }, { "CD_PAI": "639", "NM_PAI": "ARGENTINA" }, { "CD_PAI": "647", "NM_PAI": "ARMENIA, REPUBLICA DA" }, { "CD_PAI": "655", "NM_PAI": "ARUBA" }, { "CD_PAI": "698", "NM_PAI": "AUSTRALIA" }, { "CD_PAI": "728", "NM_PAI": "AUSTRIA" }, { "CD_PAI": "736", "NM_PAI": "AZERBAIJAO, REPUBLICA DO" }, { "CD_PAI": "779", "NM_PAI": "BAHAMAS, ILHAS" }, { "CD_PAI": "809", "NM_PAI": "BAHREIN, ILHAS" }, { "CD_PAI": "817", "NM_PAI": "BANGLADESH" }, { "CD_PAI": "833", "NM_PAI": "BARBADOS" }, { "CD_PAI": "850", "NM_PAI": "BELARUS, REPUBLICA DA" }, { "CD_PAI": "876", "NM_PAI": "BELGICA" }, { "CD_PAI": "884", "NM_PAI": "BELIZE" }, { "CD_PAI": "2291", "NM_PAI": "BENIN" }, { "CD_PAI": "906", "NM_PAI": "BERMUDAS" }, { "CD_PAI": "973", "NM_PAI": "BOLIVIA, ESTADO PLURINACIONAL DA" }, { "CD_PAI": "981", "NM_PAI": "BOSNIA-HERZEGOVINA (REPUBLICA DA)" }, { "CD_PAI": "1015", "NM_PAI": "BOTSUANA" }, { "CD_PAI": "1058", "NM_PAI": "BRASIL" }, { "CD_PAI": "1082", "NM_PAI": "BRUNEI" }, { "CD_PAI": "1112", "NM_PAI": "BULGARIA, REPUBLICA DA" }, { "CD_PAI": "310", "NM_PAI": "BURKINA FASO" }, { "CD_PAI": "1155", "NM_PAI": "BURUNDI" }, { "CD_PAI": "1198", "NM_PAI": "BUTAO" }, { "CD_PAI": "1279", "NM_PAI": "CABO VERDE, REPUBLICA DE" }, { "CD_PAI": "1457", "NM_PAI": "CAMAROES" }, { "CD_PAI": "1414", "NM_PAI": "CAMBOJA" }, { "CD_PAI": "1490", "NM_PAI": "CANADA" }, { "CD_PAI": "1511", "NM_PAI": "CANARIAS, ILHAS" }, { "CD_PAI": "1546", "NM_PAI": "CATAR" }, { "CD_PAI": "1376", "NM_PAI": "CAYMAN, ILHAS" }, { "CD_PAI": "1538", "NM_PAI": "CAZAQUISTAO, REPUBLICA DO" }, { "CD_PAI": "7889", "NM_PAI": "CHADE" }, { "CD_PAI": "1589", "NM_PAI": "CHILE" }, { "CD_PAI": "1600", "NM_PAI": "CHINA, REPUBLICA POPULAR" }, { "CD_PAI": "1635", "NM_PAI": "CHIPRE" }, { "CD_PAI": "5118", "NM_PAI": "CHRISTMAS,ILHA (NAVIDAD)" }, { "CD_PAI": "7412", "NM_PAI": "CINGAPURA" }, { "CD_PAI": "1651", "NM_PAI": "COCOS(KEELING),ILHAS" }, { "CD_PAI": "1694", "NM_PAI": "COLOMBIA" }, { "CD_PAI": "1732", "NM_PAI": "COMORES, ILHAS" }, { "CD_PAI": "1775", "NM_PAI": "CONGO" }, { "CD_PAI": "8885", "NM_PAI": "CONGO, REPUBLICA DEMOCRATICA DO" }, { "CD_PAI": "1830", "NM_PAI": "COOK, ILHAS" }, { "CD_PAI": "1872", "NM_PAI": "COREIA (DO NORTE), REP.POP.DEMOCRATICA" }, { "CD_PAI": "1902", "NM_PAI": "COREIA (DO SUL), REPUBLICA DA" }, { "CD_PAI": "1937", "NM_PAI": "COSTA DO MARFIM" }, { "CD_PAI": "1961", "NM_PAI": "COSTA RICA" }, { "CD_PAI": "1988", "NM_PAI": "COVEITE" }, { "CD_PAI": "1953", "NM_PAI": "CROACIA (REPUBLICA DA)" }, { "CD_PAI": "1996", "NM_PAI": "CUBA" }, { "CD_PAI": "2321", "NM_PAI": "DINAMARCA" }, { "CD_PAI": "7838", "NM_PAI": "DJIBUTI" }, { "CD_PAI": "2356", "NM_PAI": "DOMINICA,ILHA" }, { "CD_PAI": "2402", "NM_PAI": "EGITO" }, { "CD_PAI": "6874", "NM_PAI": "EL SALVADOR" }, { "CD_PAI": "2445", "NM_PAI": "EMIRADOS ARABES UNIDOS" }, { "CD_PAI": "2399", "NM_PAI": "EQUADOR" }, { "CD_PAI": "2437", "NM_PAI": "ERITREIA" }, { "CD_PAI": "2470", "NM_PAI": "ESLOVACA, REPUBLICA" }, { "CD_PAI": "2461", "NM_PAI": "ESLOVENIA, REPUBLICA DA" }, { "CD_PAI": "2453", "NM_PAI": "ESPANHA" }, { "CD_PAI": "2496", "NM_PAI": "ESTADOS UNIDOS" }, { "CD_PAI": "2518", "NM_PAI": "ESTONIA, REPUBLICA DA" }, { "CD_PAI": "2534", "NM_PAI": "ETIOPIA" }, { "CD_PAI": "2550", "NM_PAI": "FALKLAND (ILHAS MALVINAS)" }, { "CD_PAI": "2593", "NM_PAI": "FEROE, ILHAS" }, { "CD_PAI": "8702", "NM_PAI": "FIJI" }, { "CD_PAI": "2674", "NM_PAI": "FILIPINAS" }, { "CD_PAI": "2712", "NM_PAI": "FINLANDIA" }, { "CD_PAI": "1619", "NM_PAI": "FORMOSA (TAIWAN)" }, { "CD_PAI": "2755", "NM_PAI": "FRANCA" }, { "CD_PAI": "2810", "NM_PAI": "GABAO" }, { "CD_PAI": "2852", "NM_PAI": "GAMBIA" }, { "CD_PAI": "2895", "NM_PAI": "GANA" }, { "CD_PAI": "2917", "NM_PAI": "GEORGIA, REPUBLICA DA" }, { "CD_PAI": "2933", "NM_PAI": "GIBRALTAR" }, { "CD_PAI": "2976", "NM_PAI": "GRANADA" }, { "CD_PAI": "3018", "NM_PAI": "GRECIA" }, { "CD_PAI": "3050", "NM_PAI": "GROENLANDIA" }, { "CD_PAI": "3093", "NM_PAI": "GUADALUPE" }, { "CD_PAI": "3131", "NM_PAI": "GUAM" }, { "CD_PAI": "3174", "NM_PAI": "GUATEMALA" }, { "CD_PAI": "1504", "NM_PAI": "GUERNSEY, ILHA DO CANAL (INCLUI ALDERNEY E SARK)" }, { "CD_PAI": "3379", "NM_PAI": "GUIANA" }, { "CD_PAI": "3255", "NM_PAI": "GUIANA FRANCESA" }, { "CD_PAI": "3298", "NM_PAI": "GUINE" }, { "CD_PAI": "3344", "NM_PAI": "GUINE-BISSAU" }, { "CD_PAI": "3310", "NM_PAI": "GUINE-EQUATORIAL" }, { "CD_PAI": "3417", "NM_PAI": "HAITI" }, { "CD_PAI": "3450", "NM_PAI": "HONDURAS" }, { "CD_PAI": "3514", "NM_PAI": "HONG KONG" }, { "CD_PAI": "3557", "NM_PAI": "HUNGRIA, REPUBLICA DA" }, { "CD_PAI": "3573", "NM_PAI": "IEMEN" }, { "CD_PAI": "3611", "NM_PAI": "INDIA" }, { "CD_PAI": "3654", "NM_PAI": "INDONESIA" }, { "CD_PAI": "3727", "NM_PAI": "IRA, REPUBLICA ISLAMICA DO" }, { "CD_PAI": "3697", "NM_PAI": "IRAQUE" }, { "CD_PAI": "3751", "NM_PAI": "IRLANDA" }, { "CD_PAI": "3794", "NM_PAI": "ISLANDIA" }, { "CD_PAI": "3832", "NM_PAI": "ISRAEL" }, { "CD_PAI": "3867", "NM_PAI": "ITALIA" }, { "CD_PAI": "3913", "NM_PAI": "JAMAICA" }, { "CD_PAI": "3999", "NM_PAI": "JAPAO" }, { "CD_PAI": "1508", "NM_PAI": "JERSEY, ILHA DO CANAL" }, { "CD_PAI": "3964", "NM_PAI": "JOHNSTON, ILHAS" }, { "CD_PAI": "4030", "NM_PAI": "JORDANIA" }, { "CD_PAI": "4111", "NM_PAI": "KIRIBATI" }, { "CD_PAI": "4200", "NM_PAI": "LAOS, REP.POP.DEMOCR.DO" }, { "CD_PAI": "4235", "NM_PAI": "LEBUAN,ILHAS" }, { "CD_PAI": "4260", "NM_PAI": "LESOTO" }, { "CD_PAI": "4278", "NM_PAI": "LETONIA, REPUBLICA DA" }, { "CD_PAI": "4316", "NM_PAI": "LIBANO" }, { "CD_PAI": "4340", "NM_PAI": "LIBERIA" }, { "CD_PAI": "4383", "NM_PAI": "LIBIA" }, { "CD_PAI": "4405", "NM_PAI": "LIECHTENSTEIN" }, { "CD_PAI": "4421", "NM_PAI": "LITUANIA, REPUBLICA DA" }, { "CD_PAI": "4456", "NM_PAI": "LUXEMBURGO" }, { "CD_PAI": "4472", "NM_PAI": "MACAU" }, { "CD_PAI": "4499", "NM_PAI": "MACEDONIA, ANT.REP.IUGOSLAVA" }, { "CD_PAI": "4502", "NM_PAI": "MADAGASCAR" }, { "CD_PAI": "4525", "NM_PAI": "MADEIRA, ILHA DA" }, { "CD_PAI": "4553", "NM_PAI": "MALASIA" }, { "CD_PAI": "4588", "NM_PAI": "MALAVI" }, { "CD_PAI": "4618", "NM_PAI": "MALDIVAS" }, { "CD_PAI": "4642", "NM_PAI": "MALI" }, { "CD_PAI": "4677", "NM_PAI": "MALTA" }, { "CD_PAI": "3595", "NM_PAI": "MAN, ILHA DE" }, { "CD_PAI": "4723", "NM_PAI": "MARIANAS DO NORTE" }, { "CD_PAI": "4740", "NM_PAI": "MARROCOS" }, { "CD_PAI": "4766", "NM_PAI": "MARSHALL,ILHAS" }, { "CD_PAI": "4774", "NM_PAI": "MARTINICA" }, { "CD_PAI": "4855", "NM_PAI": "MAURICIO" }, { "CD_PAI": "4880", "NM_PAI": "MAURITANIA" }, { "CD_PAI": "4885", "NM_PAI": "MAYOTTE (ILHAS FRANCESAS)" }, { "CD_PAI": "4936", "NM_PAI": "MEXICO" }, { "CD_PAI": "930", "NM_PAI": "MIANMAR (BIRMANIA)" }, { "CD_PAI": "4995", "NM_PAI": "MICRONESIA" }, { "CD_PAI": "4901", "NM_PAI": "MIDWAY, ILHAS" }, { "CD_PAI": "5053", "NM_PAI": "MOCAMBIQUE" }, { "CD_PAI": "4944", "NM_PAI": "MOLDAVIA, REPUBLICA DA" }, { "CD_PAI": "4952", "NM_PAI": "MONACO" }, { "CD_PAI": "4979", "NM_PAI": "MONGOLIA" }, { "CD_PAI": "4985", "NM_PAI": "MONTENEGRO" }, { "CD_PAI": "5010", "NM_PAI": "MONTSERRAT,ILHAS" }, { "CD_PAI": "5070", "NM_PAI": "NAMIBIA" }, { "CD_PAI": "5088", "NM_PAI": "NAURU" }, { "CD_PAI": "5177", "NM_PAI": "NEPAL" }, { "CD_PAI": "5215", "NM_PAI": "NICARAGUA" }, { "CD_PAI": "5258", "NM_PAI": "NIGER" }, { "CD_PAI": "5282", "NM_PAI": "NIGERIA" }, { "CD_PAI": "5312", "NM_PAI": "NIUE,ILHA" }, { "CD_PAI": "5355", "NM_PAI": "NORFOLK,ILHA" }, { "CD_PAI": "5380", "NM_PAI": "NORUEGA" }, { "CD_PAI": "5428", "NM_PAI": "NOVA CALEDONIA" }, { "CD_PAI": "5487", "NM_PAI": "NOVA ZELANDIA" }, { "CD_PAI": "5568", "NM_PAI": "OMA" }, { "CD_PAI": "5665", "NM_PAI": "PACIFICO,ILHAS DO (POSSESSAO DOS EUA)" }, { "CD_PAI": "5738", "NM_PAI": "PAISES BAIXOS (HOLANDA)" }, { "CD_PAI": "5754", "NM_PAI": "PALAU" }, { "CD_PAI": "5800", "NM_PAI": "PANAMA" }, { "CD_PAI": "5452", "NM_PAI": "PAPUA NOVA GUINE" }, { "CD_PAI": "5762", "NM_PAI": "PAQUISTAO" }, { "CD_PAI": "5860", "NM_PAI": "PARAGUAI" }, { "CD_PAI": "5894", "NM_PAI": "PERU" }, { "CD_PAI": "5932", "NM_PAI": "PITCAIRN,ILHA" }, { "CD_PAI": "5991", "NM_PAI": "POLINESIA FRANCESA" }, { "CD_PAI": "6033", "NM_PAI": "POLONIA, REPUBLICA DA" }, { "CD_PAI": "6114", "NM_PAI": "PORTO RICO" }, { "CD_PAI": "6076", "NM_PAI": "PORTUGAL" }, { "CD_PAI": "6238", "NM_PAI": "QUENIA" }, { "CD_PAI": "6254", "NM_PAI": "QUIRGUIZ, REPUBLICA" }, { "CD_PAI": "6289", "NM_PAI": "REINO UNIDO" }, { "CD_PAI": "6408", "NM_PAI": "REPUBLICA CENTRO-AFRICANA" }, { "CD_PAI": "6475", "NM_PAI": "REPUBLICA DOMINICANA" }, { "CD_PAI": "6602", "NM_PAI": "REUNIAO, ILHA" }, { "CD_PAI": "6700", "NM_PAI": "ROMENIA" }, { "CD_PAI": "6750", "NM_PAI": "RUANDA" }, { "CD_PAI": "6769", "NM_PAI": "RUSSIA, FEDERACAO DA" }, { "CD_PAI": "6858", "NM_PAI": "SAARA OCIDENTAL" }, { "CD_PAI": "6777", "NM_PAI": "SALOMAO, ILHAS" }, { "CD_PAI": "6904", "NM_PAI": "SAMOA" }, { "CD_PAI": "6912", "NM_PAI": "SAMOA AMERICANA" }, { "CD_PAI": "6971", "NM_PAI": "SAN MARINO" }, { "CD_PAI": "7102", "NM_PAI": "SANTA HELENA" }, { "CD_PAI": "7153", "NM_PAI": "SANTA LUCIA" }, { "CD_PAI": "6955", "NM_PAI": "SAO CRISTOVAO E NEVES,ILHAS" }, { "CD_PAI": "7005", "NM_PAI": "SAO PEDRO E MIQUELON" }, { "CD_PAI": "7200", "NM_PAI": "SAO TOME E PRINCIPE, ILHAS" }, { "CD_PAI": "7056", "NM_PAI": "SAO VICENTE E GRANADINAS" }, { "CD_PAI": "7285", "NM_PAI": "SENEGAL" }, { "CD_PAI": "7358", "NM_PAI": "SERRA LEOA" }, { "CD_PAI": "7370", "NM_PAI": "SERVIA" }, { "CD_PAI": "7315", "NM_PAI": "SEYCHELLES" }, { "CD_PAI": "7447", "NM_PAI": "SIRIA, REPUBLICA ARABE DA" }, { "CD_PAI": "7480", "NM_PAI": "SOMALIA" }, { "CD_PAI": "7501", "NM_PAI": "SRI LANKA" }, { "CD_PAI": "7544", "NM_PAI": "SUAZILANDIA" }, { "CD_PAI": "7595", "NM_PAI": "SUDAO" }, { "CD_PAI": "7641", "NM_PAI": "SUECIA" }, { "CD_PAI": "7676", "NM_PAI": "SUICA" }, { "CD_PAI": "7706", "NM_PAI": "SURINAME" }, { "CD_PAI": "7722", "NM_PAI": "TADJIQUISTAO, REPUBLICA DO" }, { "CD_PAI": "7765", "NM_PAI": "TAILANDIA" }, { "CD_PAI": "7803", "NM_PAI": "TANZANIA, REP.UNIDA DA" }, { "CD_PAI": "7919", "NM_PAI": "TCHECA, REPUBLICA" }, { "CD_PAI": "7820", "NM_PAI": "TERRITORIO BRIT.OC.INDICO" }, { "CD_PAI": "7951", "NM_PAI": "TIMOR LESTE" }, { "CD_PAI": "8001", "NM_PAI": "TOGO" }, { "CD_PAI": "8109", "NM_PAI": "TONGA" }, { "CD_PAI": "8052", "NM_PAI": "TOQUELAU,ILHAS" }, { "CD_PAI": "8150", "NM_PAI": "TRINIDAD E TOBAGO" }, { "CD_PAI": "8206", "NM_PAI": "TUNISIA" }, { "CD_PAI": "8230", "NM_PAI": "TURCAS E CAICOS,ILHAS" }, { "CD_PAI": "8249", "NM_PAI": "TURCOMENISTAO, REPUBLICA DO" }, { "CD_PAI": "8273", "NM_PAI": "TURQUIA" }, { "CD_PAI": "8281", "NM_PAI": "TUVALU" }, { "CD_PAI": "8311", "NM_PAI": "UCRANIA" }, { "CD_PAI": "8338", "NM_PAI": "UGANDA" }, { "CD_PAI": "8451", "NM_PAI": "URUGUAI" }, { "CD_PAI": "8478", "NM_PAI": "UZBEQUISTAO, REPUBLICA DO" }, { "CD_PAI": "5517", "NM_PAI": "VANUATU" }, { "CD_PAI": "8486", "NM_PAI": "VATICANO, EST.DA CIDADE DO" }, { "CD_PAI": "8508", "NM_PAI": "VENEZUELA" }, { "CD_PAI": "8583", "NM_PAI": "VIETNA" }, { "CD_PAI": "8630", "NM_PAI": "VIRGENS,ILHAS (BRITANICAS)" }, { "CD_PAI": "8664", "NM_PAI": "VIRGENS,ILHAS (E.U.A.)" }, { "CD_PAI": "8737", "NM_PAI": "WAKE, ILHA" }, { "CD_PAI": "8907", "NM_PAI": "ZAMBIA" }, { "CD_PAI": "6653", "NM_PAI": "ZIMBABUE" }], function (i, d) {
+
+                $('<option>').val(d.CD_PAI).text(d.NM_PAI).appendTo(field);
+                document.getElementById('24').value = '1058';
+
+            });
+
+
+
+
+
+            var field = document.getElementById('10');
+
+
+            field.addEventListener('keyup', function () {
+                var valor = field.value.replace('-', '');
+                if (field.value !== null && valor.length === 8) {
+
+                    var url = "https://viacep.com.br/ws/" + valor + "/json/?callback=?";;//565 - raio     
+
+                    $.getJSON(url, function (dados) {
+
+
+                        if (!("erro" in dados)) {
+
+                            $("#11").val(dados.logradouro.toUpperCase());
+
+                            $("#12").val(dados.bairro.toUpperCase());
+
+
+
+                            const uf = String(dados.uf);
+
+                            $("#22 option").each(function () {
+
+
+
+                                if (uf == (ufCidades = ($(this).text().replace(/\n|\s/g, '')))) {
+
+                                    var $this = $(this);
+
+                                    $this.prop('selected', 'selected');
+
+
+
+                                    $.getJSON("?id=" + $(this).val() + "&op=1", function (cidades, status) {
+
+                                        var field = $('#23');
+
+                                        field.find('option').remove();
+
+                                        $.each(cidades, function (i, d) {
+
+                                            if (d.NM_CID == dados.localidade.toUpperCase()) {
+
+                                                $('<option>').val(d.CD_CID).text(d.NM_CID).appendTo(field);
+
+                                            }
+
+                                        });
+
+                                        $('#23').prop('disabled', false);
+
+                                    });
+
+                                }
+
+                            });
+
+                        }
+
+                    });
+
+                };
+
+            });
+
+            /**
+             * get data on click button
+             * for above code work done inser the follow tag on contact form 
+             * <input type="button" id="101" value="Enviar 2"/>
+            */
+            var elEv = document.getElementById('101');
+            elEv.addEventListener('click', function () {
+
+
+                var p = document.getElementsByClassName('wpcf7-form');
+                //var wpcf7Elm = document.forms;
+                //var t = jQuery('#atr-nome').val();  
+                //var s = document;
+
+                //var inputs1 = Array.prototype.slice.call(p[0]);     
+                //var inputs2 = Array.from(p[0]);
+
+                var el = document.getElementById("22");
+                var elTx = el.options[el.selectedIndex].text
+                var elVal = el.options[el.selectedIndex].value
+                el.options[el.selectedIndex].value = elTx
+
+                var objSerialize = $('.wpcf7-form').serialize();
+
+                el.options[el.selectedIndex].value = elVal
+
+                //console.log('form 0 ', objSerialize);
+                //console.log('form 0 ', objSerializeA);
+                //console.log('form 1 ', imputs1);
+                //console.log('form 2 ', imputs2);
+
+                $.post('/', { 'frm': objSerialize }, function (response) {
+                    console.log(response);
+                    alert("AGUARDE ! " + response);
+                });
+            });
+
+            /**
+             * after do it // but change the button on admin area contact form 7
+            *
+            $('wpcf7-form').on('submit', function( event ){
+              event.preventDefault();
+              console.log('serialize ', $(this).serialize() ); 
+              console.log('serialize array ', $(this).serializeArray() );
+              $.get('?frm='+imputs1, function(response){    
+                if(!response) alert('Erro, 000');
+                if(response === '99') alert('Erro', 'erro ao enviar dados ligue para ...');
+                alert("AGUARDE ! "+response);   
+              }); 
+    
+            }); */
+
+
+            //document.addEventListener( 'wpcf7mailsent', function( event ) {
+            //elEv.addEventListener( 'onclick', function() {
+
+            //$.get("?frm=1", function(response){
+            //console.log(response);
+            //alert("AGUARDE ! "+response);
+            //}); 
+            //location = 'https://www.notalivre.com.br/';
+
+
+            //}, false ); 
+
+
+            //var wpcf7Elm = document.querySelector( '.wpcf7' );
+
+            //wpcf7Elm.addEventListener( 'wpcf7submit', function( event ) {
+            //alert( "Fire!" );
+            //}, false );
+
+
+
+
+            //console.log(document);
+
+        };//close onload
+
+
+
+
+
+       //Update all imputs to uppercase 
+
+        /*var upper = function(){
+ 
+          var inputObj = document.getElementsByTagName('input');
+ 
+          for(let i = 0; i < inputObj.length; i++){
+ 
+           let inpValor = String(inputObj[i].value);
+ 
+           let inpId = inputObj[i].id;
+ 
+           jQuery("#" +inpId).val(inpValor.toUpperCase());
+ 
+          };
+ 
+         } */
+
+
+
+    </script>
+
+    <meta name='robots' content='max-image-preview:large' />
+    <script>window._wca = window._wca || [];</script>
+    <link rel='dns-prefetch' href='//stats.wp.com' />
+    <link rel='dns-prefetch' href='//s.w.org' />
+    <link rel="alternate" type="application/rss+xml" title="My Blog A &raquo; Feed"
+        href="https://pix.ctec.com.br/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="My Blog A &raquo; Feed de comentários"
+        href="https://pix.ctec.com.br/comments/feed/" />
+    <script type="text/javascript">
+        window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "https:\/\/pix.ctec.com.br\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.0.2" } };
+        /*! This file is auto-generated */
+        !function (e, a, t) { var n, r, o, i = a.createElement("canvas"), p = i.getContext && i.getContext("2d"); function s(e, t) { var a = String.fromCharCode, e = (p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0), i.toDataURL()); return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL() } function c(e) { var t = a.createElement("script"); t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t) } for (o = Array("flag", "emoji"), t.supports = { everything: !0, everythingExceptFlag: !0 }, r = 0; r < o.length; r++)t.supports[o[r]] = function (e) { if (!p || !p.fillText) return !1; switch (p.textBaseline = "top", p.font = "600 32px Arial", e) { case "flag": return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]); case "emoji": return !s([129777, 127995, 8205, 129778, 127999], [129777, 127995, 8203, 129778, 127999]) }return !1 }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]); t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function () { t.DOMReady = !0 }, t.supports.everything || (n = function () { t.readyCallback() }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () { "complete" === a.readyState && t.readyCallback() })), (e = t.source || {}).concatemoji ? c(e.concatemoji) : e.wpemoji && e.twemoji && (c(e.twemoji), c(e.wpemoji))) }(window, document, window._wpemojiSettings);
+    </script>
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 0.07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='stylesheet' id='wp-block-library-css'
+        href='https://pix.ctec.com.br/wp-includes/css/dist/block-library/style.min.css?ver=6.0.2' type='text/css'
+        media='all' />
+    <style id='wp-block-library-inline-css' type='text/css'>
+        .has-text-align-justify {
+            text-align: justify;
+        }
+    </style>
+    <link rel='stylesheet' id='mediaelement-css'
+        href='https://pix.ctec.com.br/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.16'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='wp-mediaelement-css'
+        href='https://pix.ctec.com.br/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.0.2' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='wc-blocks-vendors-style-css'
+        href='https://pix.ctec.com.br/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-vendors-style.css?ver=6.7.3'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='wc-blocks-style-css'
+        href='https://pix.ctec.com.br/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-style.css?ver=6.7.3'
+        type='text/css' media='all' />
+    <style id='global-styles-inline-css' type='text/css'>
+        body {
+            --wp--preset--color--black: #000000;
+            --wp--preset--color--cyan-bluish-gray: #abb8c3;
+            --wp--preset--color--white: #ffffff;
+            --wp--preset--color--pale-pink: #f78da7;
+            --wp--preset--color--vivid-red: #cf2e2e;
+            --wp--preset--color--luminous-vivid-orange: #ff6900;
+            --wp--preset--color--luminous-vivid-amber: #fcb900;
+            --wp--preset--color--light-green-cyan: #7bdcb5;
+            --wp--preset--color--vivid-green-cyan: #00d084;
+            --wp--preset--color--pale-cyan-blue: #8ed1fc;
+            --wp--preset--color--vivid-cyan-blue: #0693e3;
+            --wp--preset--color--vivid-purple: #9b51e0;
+            --wp--preset--color--neve-link-color: var(--nv-primary-accent);
+            --wp--preset--color--neve-link-hover-color: var(--nv-secondary-accent);
+            --wp--preset--color--nv-site-bg: var(--nv-site-bg);
+            --wp--preset--color--nv-light-bg: var(--nv-light-bg);
+            --wp--preset--color--nv-dark-bg: var(--nv-dark-bg);
+            --wp--preset--color--neve-text-color: var(--nv-text-color);
+            --wp--preset--color--nv-text-dark-bg: var(--nv-text-dark-bg);
+            --wp--preset--color--nv-c-1: var(--nv-c-1);
+            --wp--preset--color--nv-c-2: var(--nv-c-2);
+            --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+            --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+            --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+            --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+            --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+            --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+            --wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+            --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+            --wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+            --wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+            --wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+            --wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+            --wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');
+            --wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');
+            --wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');
+            --wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');
+            --wp--preset--duotone--midnight: url('#wp-duotone-midnight');
+            --wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');
+            --wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');
+            --wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');
+            --wp--preset--font-size--small: 13px;
+            --wp--preset--font-size--medium: 20px;
+            --wp--preset--font-size--large: 36px;
+            --wp--preset--font-size--x-large: 42px;
+        }
+
+        .has-black-color {
+            color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-color {
+            color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-color {
+            color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-color {
+            color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-color {
+            color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-color {
+            color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-color {
+            color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-color {
+            color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-color {
+            color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-color {
+            color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-color {
+            color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-color {
+            color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-background-color {
+            background-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-background-color {
+            background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-background-color {
+            background-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-background-color {
+            background-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-background-color {
+            background-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-background-color {
+            background-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-background-color {
+            background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-background-color {
+            background-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-border-color {
+            border-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-border-color {
+            border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-border-color {
+            border-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-border-color {
+            border-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-border-color {
+            border-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-border-color {
+            border-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-border-color {
+            border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-border-color {
+            border-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+            background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+        }
+
+        .has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+            background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+        }
+
+        .has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-orange-to-vivid-red-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+        }
+
+        .has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+            background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+        }
+
+        .has-cool-to-warm-spectrum-gradient-background {
+            background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+        }
+
+        .has-blush-light-purple-gradient-background {
+            background: var(--wp--preset--gradient--blush-light-purple) !important;
+        }
+
+        .has-blush-bordeaux-gradient-background {
+            background: var(--wp--preset--gradient--blush-bordeaux) !important;
+        }
+
+        .has-luminous-dusk-gradient-background {
+            background: var(--wp--preset--gradient--luminous-dusk) !important;
+        }
+
+        .has-pale-ocean-gradient-background {
+            background: var(--wp--preset--gradient--pale-ocean) !important;
+        }
+
+        .has-electric-grass-gradient-background {
+            background: var(--wp--preset--gradient--electric-grass) !important;
+        }
+
+        .has-midnight-gradient-background {
+            background: var(--wp--preset--gradient--midnight) !important;
+        }
+
+        .has-small-font-size {
+            font-size: var(--wp--preset--font-size--small) !important;
+        }
+
+        .has-medium-font-size {
+            font-size: var(--wp--preset--font-size--medium) !important;
+        }
+
+        .has-large-font-size {
+            font-size: var(--wp--preset--font-size--large) !important;
+        }
+
+        .has-x-large-font-size {
+            font-size: var(--wp--preset--font-size--x-large) !important;
+        }
+    </style>
+    <link rel='stylesheet' id='woocommerce-layout-css'
+        href='woocommerce-layout.css'
+        type='text/css' media='all' />
+    <style id='woocommerce-layout-inline-css' type='text/css'>
+        .infinite-scroll .woocommerce-pagination {
+            display: none;
+        }
+    </style>
+    <link rel='stylesheet' id='woocommerce-smallscreen-css'
+        href='woocommerce-smallscreen.css'
+        type='text/css' media='only screen and (max-width: 768px)' />
+    <link rel='stylesheet' id='woocommerce-general-css'
+        href='woocommerce.css'
+        type='text/css' media='all' />
+    <style id='woocommerce-inline-inline-css' type='text/css'>
+        .woocommerce form .form-row .required {
+            visibility: visible;
+        }
+    </style>
+    <link rel='stylesheet' id='woocommerce-mercadopago-global-css-css'
+        href='global.min.css'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='neve-woocommerce-css'
+        href='woocommerce.css' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='neve-style-css'
+        href='style-main-new.css' type='text/css'
+        media='all' />
+    <style id='neve-style-inline-css' type='text/css'>
+        .nv-meta-list li.meta:not(:last-child):after {
+            content: "/"
+        }
+
+        :root {
+            --container: 748px;
+            --postWidth: 100%;
+            --primaryBtnBg: var(--nv-primary-accent);
+            --primaryBtnHoverBg: var(--nv-primary-accent);
+            --primaryBtnColor: #ffffff;
+            --secondaryBtnColor: var(--nv-primary-accent);
+            --primaryBtnHoverColor: #ffffff;
+            --secondaryBtnHoverColor: var(--nv-primary-accent);
+            --primaryBtnBorderRadius: 3px;
+            --secondaryBtnBorderRadius: 3px;
+            --secondaryBtnBorderWidth: 3px;
+            --btnPadding: 13px 15px;
+            --primaryBtnPadding: 13px 15px;
+            --secondaryBtnPadding: 10px 12px;
+            --bodyFontFamily: Arial, Helvetica, sans-serif;
+            --bodyFontSize: 15px;
+            --bodyLineHeight: 1.6;
+            --bodyLetterSpacing: 0px;
+            --bodyFontWeight: 400;
+            --h1FontSize: 36px;
+            --h1FontWeight: 700;
+            --h1LineHeight: 1.2;
+            --h1LetterSpacing: 0px;
+            --h1TextTransform: none;
+            --h2FontSize: 28px;
+            --h2FontWeight: 700;
+            --h2LineHeight: 1.3;
+            --h2LetterSpacing: 0px;
+            --h2TextTransform: none;
+            --h3FontSize: 24px;
+            --h3FontWeight: 700;
+            --h3LineHeight: 1.4;
+            --h3LetterSpacing: 0px;
+            --h3TextTransform: none;
+            --h4FontSize: 20px;
+            --h4FontWeight: 700;
+            --h4LineHeight: 1.6;
+            --h4LetterSpacing: 0px;
+            --h4TextTransform: none;
+            --h5FontSize: 16px;
+            --h5FontWeight: 700;
+            --h5LineHeight: 1.6;
+            --h5LetterSpacing: 0px;
+            --h5TextTransform: none;
+            --h6FontSize: 14px;
+            --h6FontWeight: 700;
+            --h6LineHeight: 1.6;
+            --h6LetterSpacing: 0px;
+            --h6TextTransform: none;
+            --formFieldBorderWidth: 2px;
+            --formFieldBorderRadius: 3px;
+            --formFieldBgColor: var(--nv-site-bg);
+            --formFieldBorderColor: #dddddd;
+            --formFieldColor: var(--nv-text-color);
+            --formFieldPadding: 10px 12px;
+        }
+
+        .has-neve-button-color-color {
+            color: var(--nv-primary-accent) !important;
+        }
+
+        .has-neve-button-color-background-color {
+            background-color: var(--nv-primary-accent) !important;
+        }
+
+        .single-post-container .alignfull>[class*="__inner-container"],
+        .single-post-container .alignwide>[class*="__inner-container"] {
+            max-width: 718px
+        }
+
+        .single-product .alignfull>[class*="__inner-container"],
+        .single-product .alignwide>[class*="__inner-container"] {
+            max-width: 718px
+        }
+
+        .nv-meta-list {
+            --avatarSize: 20px;
+        }
+
+        .single .nv-meta-list {
+            --avatarSize: 20px;
+        }
+
+        .nv-post-cover {
+            --height: 250px;
+            --padding: 40px 15px;
+            --justify: flex-start;
+            --textAlign: left;
+            --vAlign: center;
+        }
+
+        .nv-post-cover .nv-title-meta-wrap,
+        .nv-page-title-wrap,
+        .entry-header {
+            --textAlign: left;
+        }
+
+        .nv-is-boxed.nv-title-meta-wrap {
+            --padding: 40px 15px;
+            --bgColor: var(--nv-dark-bg);
+        }
+
+        .nv-overlay {
+            --opacity: 50;
+            --blendMode: normal;
+        }
+
+        .nv-is-boxed.nv-comments-wrap {
+            --padding: 20px;
+        }
+
+        .nv-is-boxed.comment-respond {
+            --padding: 20px;
+        }
+
+        .global-styled {
+            --bgColor: var(--nv-site-bg);
+        }
+
+        .header-top {
+            --rowBColor: var(--nv-light-bg);
+            --color: var(--nv-text-color);
+            --bgColor: var(--nv-site-bg);
+        }
+
+        .header-main {
+            --rowBColor: var(--nv-light-bg);
+            --color: var(--nv-text-color);
+            --bgColor: var(--nv-site-bg);
+        }
+
+        .header-bottom {
+            --rowBColor: var(--nv-light-bg);
+            --color: var(--nv-text-color);
+            --bgColor: var(--nv-site-bg);
+        }
+
+        .header-menu-sidebar-bg {
+            --justify: flex-start;
+            --textAlign: left;
+            --flexG: 1;
+            --color: var(--nv-text-color);
+            --bgColor: var(--nv-site-bg);
+        }
+
+        .header-menu-sidebar {
+            width: 360px;
+        }
+
+        .builder-item--logo {
+            --maxWidth: 120px;
+            --padding: 10px 0;
+            --textAlign: left;
+            --justify: flex-start;
+        }
+
+        .builder-item--nav-icon {
+            --padding: 10px 15px;
+        }
+
+        .builder-item--primary-menu {
+            --hoverColor: var(--nv-secondary-accent);
+            --activeColor: var(--nv-primary-accent);
+            --spacing: 20px;
+            --height: 25px;
+            --fontSize: 1em;
+            --lineHeight: 1.6;
+            --letterSpacing: 0px;
+            --fontWeight: 500;
+            --textTransform: none;
+            --iconSize: 1em;
+        }
+
+        .hfg-is-group.has-primary-menu .inherit-ff {
+            --inheritedFW: 500;
+        }
+
+        .footer-top-inner .row {
+            grid-template-columns: 1fr 1fr 1fr;
+            --vAlign: flex-start;
+        }
+
+        .footer-top {
+            --rowBColor: var(--nv-light-bg);
+            --color: var(--nv-text-color);
+            --bgColor: var(--nv-site-bg);
+        }
+
+        .footer-main-inner .row {
+            grid-template-columns: 1fr 1fr 1fr;
+            --vAlign: flex-start;
+        }
+
+        .footer-main {
+            --rowBColor: var(--nv-light-bg);
+            --color: var(--nv-text-color);
+            --bgColor: var(--nv-site-bg);
+        }
+
+        .footer-bottom-inner .row {
+            grid-template-columns: 1fr 1fr 1fr;
+            --vAlign: flex-start;
+        }
+
+        .footer-bottom {
+            --rowBColor: var(--nv-light-bg);
+            --color: var(--nv-text-dark-bg);
+            --bgColor: var(--nv-primary-accent);
+        }
+
+        .builder-item--footer_copyright {
+            --fontSize: 1em;
+            --lineHeight: 1.6;
+            --letterSpacing: 0px;
+            --fontWeight: 500;
+            --textTransform: none;
+            --iconSize: 1em;
+            --textAlign: left;
+            --justify: flex-start;
+        }
+
+        @media(min-width: 576px) {
+            :root {
+                --container: 992px;
+                --postWidth: 50%;
+                --btnPadding: 13px 15px;
+                --primaryBtnPadding: 13px 15px;
+                --secondaryBtnPadding: 10px 12px;
+                --bodyFontSize: 16px;
+                --bodyLineHeight: 1.6;
+                --bodyLetterSpacing: 0px;
+                --h1FontSize: 38px;
+                --h1LineHeight: 1.2;
+                --h1LetterSpacing: 0px;
+                --h2FontSize: 30px;
+                --h2LineHeight: 1.2;
+                --h2LetterSpacing: 0px;
+                --h3FontSize: 26px;
+                --h3LineHeight: 1.4;
+                --h3LetterSpacing: 0px;
+                --h4FontSize: 22px;
+                --h4LineHeight: 1.5;
+                --h4LetterSpacing: 0px;
+                --h5FontSize: 18px;
+                --h5LineHeight: 1.6;
+                --h5LetterSpacing: 0px;
+                --h6FontSize: 14px;
+                --h6LineHeight: 1.6;
+                --h6LetterSpacing: 0px;
+            }
+
+            .single-post-container .alignfull>[class*="__inner-container"],
+            .single-post-container .alignwide>[class*="__inner-container"] {
+                max-width: 962px
+            }
+
+            .single-product .alignfull>[class*="__inner-container"],
+            .single-product .alignwide>[class*="__inner-container"] {
+                max-width: 962px
+            }
+
+            .nv-meta-list {
+                --avatarSize: 20px;
+            }
+
+            .single .nv-meta-list {
+                --avatarSize: 20px;
+            }
+
+            .nv-post-cover {
+                --height: 320px;
+                --padding: 60px 30px;
+                --justify: flex-start;
+                --textAlign: left;
+                --vAlign: center;
+            }
+
+            .nv-post-cover .nv-title-meta-wrap,
+            .nv-page-title-wrap,
+            .entry-header {
+                --textAlign: left;
+            }
+
+            .nv-is-boxed.nv-title-meta-wrap {
+                --padding: 60px 30px;
+            }
+
+            .nv-is-boxed.nv-comments-wrap {
+                --padding: 30px;
+            }
+
+            .nv-is-boxed.comment-respond {
+                --padding: 30px;
+            }
+
+            .header-menu-sidebar-bg {
+                --justify: flex-start;
+                --textAlign: left;
+                --flexG: 1;
+            }
+
+            .header-menu-sidebar {
+                width: 360px;
+            }
+
+            .builder-item--logo {
+                --maxWidth: 120px;
+                --padding: 10px 0;
+                --textAlign: left;
+                --justify: flex-start;
+            }
+
+            .builder-item--nav-icon {
+                --padding: 10px 15px;
+            }
+
+            .builder-item--primary-menu {
+                --spacing: 20px;
+                --height: 25px;
+                --fontSize: 1em;
+                --lineHeight: 1.6;
+                --letterSpacing: 0px;
+                --iconSize: 1em;
+            }
+
+            .builder-item--footer_copyright {
+                --fontSize: 1em;
+                --lineHeight: 1.6;
+                --letterSpacing: 0px;
+                --iconSize: 1em;
+                --textAlign: left;
+                --justify: flex-start;
+            }
+        }
+
+        @media(min-width: 960px) {
+            :root {
+                --container: 1170px;
+                --postWidth: 33.333333333333%;
+                --btnPadding: 13px 15px;
+                --primaryBtnPadding: 13px 15px;
+                --secondaryBtnPadding: 10px 12px;
+                --bodyFontSize: 16px;
+                --bodyLineHeight: 1.7;
+                --bodyLetterSpacing: 0px;
+                --h1FontSize: 40px;
+                --h1LineHeight: 1.1;
+                --h1LetterSpacing: 0px;
+                --h2FontSize: 32px;
+                --h2LineHeight: 1.2;
+                --h2LetterSpacing: 0px;
+                --h3FontSize: 28px;
+                --h3LineHeight: 1.4;
+                --h3LetterSpacing: 0px;
+                --h4FontSize: 24px;
+                --h4LineHeight: 1.5;
+                --h4LetterSpacing: 0px;
+                --h5FontSize: 20px;
+                --h5LineHeight: 1.6;
+                --h5LetterSpacing: 0px;
+                --h6FontSize: 16px;
+                --h6LineHeight: 1.6;
+                --h6LetterSpacing: 0px;
+            }
+
+            body:not(.single):not(.archive):not(.blog):not(.search):not(.error404) .neve-main>.container .col,
+            body.post-type-archive-course .neve-main>.container .col,
+            body.post-type-archive-llms_membership .neve-main>.container .col {
+                max-width: 100%;
+            }
+
+            body:not(.single):not(.archive):not(.blog):not(.search):not(.error404) .nv-sidebar-wrap,
+            body.post-type-archive-course .nv-sidebar-wrap,
+            body.post-type-archive-llms_membership .nv-sidebar-wrap {
+                max-width: 0%;
+            }
+
+            .neve-main>.archive-container .nv-index-posts.col {
+                max-width: 100%;
+            }
+
+            .neve-main>.archive-container .nv-sidebar-wrap {
+                max-width: 0%;
+            }
+
+            .neve-main>.single-post-container .nv-single-post-wrap.col {
+                max-width: 70%;
+            }
+
+            .single-post-container .alignfull>[class*="__inner-container"],
+            .single-post-container .alignwide>[class*="__inner-container"] {
+                max-width: 789px
+            }
+
+            .container-fluid.single-post-container .alignfull>[class*="__inner-container"],
+            .container-fluid.single-post-container .alignwide>[class*="__inner-container"] {
+                max-width: calc(70% + 15px)
+            }
+
+            .neve-main>.single-post-container .nv-sidebar-wrap {
+                max-width: 30%;
+            }
+
+            .archive.woocommerce .neve-main>.shop-container .nv-shop.col {
+                max-width: 70%;
+            }
+
+            .archive.woocommerce .neve-main>.shop-container .nv-sidebar-wrap {
+                max-width: 30%;
+            }
+
+            .single-product .neve-main>.shop-container .nv-shop.col {
+                max-width: 100%;
+            }
+
+            .single-product .alignfull>[class*="__inner-container"],
+            .single-product .alignwide>[class*="__inner-container"] {
+                max-width: 1140px
+            }
+
+            .single-product .container-fluid .alignfull>[class*="__inner-container"],
+            .single-product .alignwide>[class*="__inner-container"] {
+                max-width: calc(100% + 15px)
+            }
+
+            .single-product .neve-main>.shop-container .nv-sidebar-wrap {
+                max-width: 0%;
+            }
+
+            .nv-meta-list {
+                --avatarSize: 20px;
+            }
+
+            .single .nv-meta-list {
+                --avatarSize: 20px;
+            }
+
+            .nv-post-cover {
+                --height: 400px;
+                --padding: 60px 40px;
+                --justify: flex-start;
+                --textAlign: left;
+                --vAlign: center;
+            }
+
+            .nv-post-cover .nv-title-meta-wrap,
+            .nv-page-title-wrap,
+            .entry-header {
+                --textAlign: left;
+            }
+
+            .nv-is-boxed.nv-title-meta-wrap {
+                --padding: 60px 40px;
+            }
+
+            .nv-is-boxed.nv-comments-wrap {
+                --padding: 40px;
+            }
+
+            .nv-is-boxed.comment-respond {
+                --padding: 40px;
+            }
+
+            .header-menu-sidebar-bg {
+                --justify: flex-start;
+                --textAlign: left;
+                --flexG: 1;
+            }
+
+            .header-menu-sidebar {
+                width: 360px;
+            }
+
+            .builder-item--logo {
+                --maxWidth: 120px;
+                --padding: 10px 0;
+                --textAlign: left;
+                --justify: flex-start;
+            }
+
+            .builder-item--nav-icon {
+                --padding: 10px 15px;
+            }
+
+            .builder-item--primary-menu {
+                --spacing: 20px;
+                --height: 25px;
+                --fontSize: 1em;
+                --lineHeight: 1.6;
+                --letterSpacing: 0px;
+                --iconSize: 1em;
+            }
+
+            .builder-item--footer_copyright {
+                --fontSize: 1em;
+                --lineHeight: 1.6;
+                --letterSpacing: 0px;
+                --iconSize: 1em;
+                --textAlign: left;
+                --justify: flex-start;
+            }
+        }
+
+        :root {
+            --nv-primary-accent: #104d8a;
+            --nv-secondary-accent: #104d8a;
+            --nv-site-bg: ##F7F7F7;
+            --nv-light-bg: #f4f5f7;
+            --nv-dark-bg: #121212;
+            --nv-text-color: #272626;
+            --nv-text-dark-bg: #ffffff;
+            --nv-c-1: #9463ae;
+            --nv-c-2: #be574b;
+            --nv-fallback-ff: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <link rel='stylesheet' id='jetpack_css-css'
+        href='https://pix.ctec.com.br/wp-content/plugins/jetpack/css/jetpack.css?ver=11.0' type='text/css'
+        media='all' />
+    <script type='text/javascript' src='https://pix.ctec.com.br/wp-includes/js/jquery/jquery.min.js?ver=3.6.0'
+        id='jquery-core-js'></script>
+    <script type='text/javascript' src='https://pix.ctec.com.br/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2'
+        id='jquery-migrate-js'></script>
+    <script defer type='text/javascript' src='https://stats.wp.com/s-202239.js' id='woocommerce-analytics-js'></script>
+    <script type='text/javascript' src='https://pix.ctec.com.br/wp-includes/js/jquery/jquery.mask.min.js?ver=6.0.2'
+        id='jquery.mask.min.js-js'></script>
+    <link rel="https://api.w.org/" href="https://pix.ctec.com.br/wp-json/" />
+    <link rel="alternate" type="application/json" href="https://pix.ctec.com.br/wp-json/wp/v2/pages/50" />
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://pix.ctec.com.br/xmlrpc.php?rsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml"
+        href="https://pix.ctec.com.br/wp-includes/wlwmanifest.xml" />
+    <meta name="generator" content="WordPress 6.0.2" />
+    <meta name="generator" content="WooCommerce 6.2.2" />
+    <link rel="canonical" href="https://pix.ctec.com.br/contact-form/" />
+    <link rel='shortlink' href='https://pix.ctec.com.br/?p=50' />
+    <link rel="alternate" type="application/json+oembed"
+        href="https://pix.ctec.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpix.ctec.com.br%2Fcontact-form%2F" />
+    <link rel="alternate" type="text/xml+oembed"
+        href="https://pix.ctec.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpix.ctec.com.br%2Fcontact-form%2F&#038;format=xml" />
+    <style>
+        img#wpstats {
+            display: none
+        }
+    </style>
+    <noscript>
+        <style>
+            .woocommerce-product-gallery {
+                opacity: 1 !important;
+            }
+        </style>
+    </noscript>
+
+</head>
+
+<body
+    class="page-template-default page page-id-50 theme-neve woocommerce-no-js  nv-blog-grid nv-sidebar-full-width menu_sidebar_slide_left"
+    id="neve_body">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-dark-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0.49803921568627" />
+                    <feFuncG type="table" tableValues="0 0.49803921568627" />
+                    <feFuncB type="table" tableValues="0 0.49803921568627" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-red">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 0.27843137254902" />
+                    <feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-midnight">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0" />
+                    <feFuncG type="table" tableValues="0 0.64705882352941" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-magenta-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.78039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.94901960784314" />
+                    <feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-green">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.44705882352941 0.4" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-orange">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.098039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.66274509803922" />
+                    <feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg>
+    <div class="wrapper">
+
+        <header class="header" role="banner" next-page-hide>
+            <a class="neve-skip-link show-on-focus" href="#content">
+                Avançar para o conteúdo </a>
+            <div id="header-grid" class="hfg_header site-header">
+
+                <nav class="header--row header-main hide-on-mobile hide-on-tablet layout-full-contained nv-navbar header--row"
+                    data-row-id="main" data-show-on="desktop">
+
+                    <div class="header--row-inner header-main-inner">
+                        <div class="container">
+                            <div class="row row--wrapper" data-section="hfg_header_layout_main">
+                                <div class="hfg-slot left">
+                                    <div class="builder-item desktop-left">
+                                        <div class="item--inner builder-item--logo" data-section="title_tagline"
+                                            data-item-id="logo">
+
+                                            <div class="site-logo">
+                                                <a class="brand" href="https://pix.ctec.com.br/" title="My Blog A"
+                                                    aria-label="My Blog A">
+                                                    <div class="nv-title-tagline-wrap">
+                                                        <p class="site-title">CTEC </p><small>Soluções em Informática</small>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="hfg-slot right">
+                                    <div class="builder-item has-nav">
+                                        <div class="item--inner builder-item--primary-menu has_menu"
+                                            data-section="header_menu_primary" data-item-id="primary-menu">
+                                            <div class="nv-nav-wrap">
+                                                <div role="navigation" class="style-plain nav-menu-primary"
+                                                    aria-label="Menu principal">
+
+                                                    <ul id="nv-primary-navigation-main" class="primary-menu-ul nav-ul">
+                                                        <li class="page_item page-item-9"><a
+                                                                href="https://pix.ctec.com.br/minha-conta/">A minha
+                                                                conta</a></li>
+                                                        <li class="page_item page-item-7"><a
+                                                                href="https://pix.ctec.com.br/carrinho/">Carrinho</a>
+                                                        </li>
+                                                        <li class="page_item page-item-50 current_page_item"><a
+                                                                href="https://pix.ctec.com.br/contact-form/"
+                                                                aria-current="page">Contact Form</a></li>
+                                                        <li class="page_item page-item-8"><a
+                                                                href="https://pix.ctec.com.br/finalizar-compra/">Finalizar
+                                                                compras</a></li>
+                                                        <li class="page_item page-item-6"><a
+                                                                href="https://pix.ctec.com.br/loja/">Loja</a></li>
+                                                        <li class="page_item page-item-22 page_item_has_children"><a
+                                                                href="https://pix.ctec.com.br/pagseguro/">PagSeguro</a>
+                                                        </li>
+                                                        <li class="page_item page-item-23"><a
+                                                                href="https://pix.ctec.com.br/pagseguro/checkout/">PagSeguro
+                                                                Checkout</a></li>
+                                                        <li class="page_item page-item-24"><a
+                                                                href="https://pix.ctec.com.br/pagseguro/direct-payment/">PagSeguro
+                                                                Checkout Transparente</a></li>
+                                                        <li class="page_item page-item-26"><a
+                                                                href="https://pix.ctec.com.br/pagseguro/order-error/">PagSeguro
+                                                                Erro</a></li>
+                                                        <li class="page_item page-item-25"><a
+                                                                href="https://pix.ctec.com.br/pagseguro/order-confirmation/">PagSeguro
+                                                                Ordem Recebida</a></li>
+                                                        <li class="page_item page-item-2"><a
+                                                                href="https://pix.ctec.com.br/sample-page/">Sample
+                                                                Page</a></li>
+                                                        <li class="page_item page-item-69"><a
+                                                                href="https://pix.ctec.com.br/teste-agora/">Teste
+                                                                Agora!</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+
+                <nav class="header--row header-main hide-on-desktop layout-full-contained nv-navbar header--row"
+                    data-row-id="main" data-show-on="mobile">
+
+                    <div class="header--row-inner header-main-inner">
+                        <div class="container">
+                            <div class="row row--wrapper" data-section="hfg_header_layout_main">
+                                <div class="hfg-slot left">
+                                    <div class="builder-item tablet-left mobile-left">
+                                        <div class="item--inner builder-item--logo" data-section="title_tagline"
+                                            data-item-id="logo">
+
+                                            <div class="site-logo">
+                                                <a class="brand" href="https://pix.ctec.com.br/" title="My Blog A"
+                                                    aria-label="My Blog A">
+                                                    <div class="nv-title-tagline-wrap">
+                                                        <p class="site-title">My Blog A</p><small>My WordPress
+                                                            Blog</small>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="hfg-slot right">
+                                    <div class="builder-item tablet-left mobile-left">
+                                        <div class="item--inner builder-item--nav-icon" data-section="header_menu_icon"
+                                            data-item-id="nav-icon">
+                                            <div class="menu-mobile-toggle item-button navbar-toggle-wrapper">
+                                                <button type="button" class=" navbar-toggle" value="Menu de navegação"
+                                                    aria-label="Menu de navegação ">
+                                                    <span class="bars">
+                                                        <span class="icon-bar"></span>
+                                                        <span class="icon-bar"></span>
+                                                        <span class="icon-bar"></span>
+                                                    </span>
+                                                    <span class="screen-reader-text">Menu de navegação</span>
+                                                </button>
+                                            </div>
+                                            <!--.navbar-toggle-wrapper-->
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+                <div id="header-menu-sidebar" class="header-menu-sidebar menu-sidebar-panel slide_left"
+                    data-row-id="sidebar">
+                    <div id="header-menu-sidebar-bg" class="header-menu-sidebar-bg">
+                        <div class="close-sidebar-panel navbar-toggle-wrapper">
+                            <button type="button" class="hamburger is-active  navbar-toggle active"
+                                value="Menu de navegação" aria-label="Menu de navegação ">
+                                <span class="bars">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </span>
+                                <span class="screen-reader-text">
+                                    Menu de navegação </span>
+                            </button>
+                        </div>
+                        <div id="header-menu-sidebar-inner" class="header-menu-sidebar-inner ">
+                            <div class="builder-item has-nav">
+                                <div class="item--inner builder-item--primary-menu has_menu"
+                                    data-section="header_menu_primary" data-item-id="primary-menu">
+                                    <div class="nv-nav-wrap">
+                                        <div role="navigation" class="style-plain nav-menu-primary"
+                                            aria-label="Menu principal">
+
+                                            <ul id="nv-primary-navigation-sidebar" class="primary-menu-ul nav-ul">
+                                                <li class="page_item page-item-9"><a
+                                                        href="https://pix.ctec.com.br/minha-conta/">A minha conta</a>
+                                                </li>
+                                                <li class="page_item page-item-7"><a
+                                                        href="https://pix.ctec.com.br/carrinho/">Carrinho</a></li>
+                                                <li class="page_item page-item-50 current_page_item"><a
+                                                        href="https://pix.ctec.com.br/contact-form/"
+                                                        aria-current="page">Contact Form</a></li>
+                                                <li class="page_item page-item-8"><a
+                                                        href="https://pix.ctec.com.br/finalizar-compra/">Finalizar
+                                                        compras</a></li>
+                                                <li class="page_item page-item-6"><a
+                                                        href="https://pix.ctec.com.br/loja/">Loja</a></li>
+                                                <li class="page_item page-item-22 page_item_has_children"><a
+                                                        href="https://pix.ctec.com.br/pagseguro/">PagSeguro</a></li>
+                                                <li class="page_item page-item-23"><a
+                                                        href="https://pix.ctec.com.br/pagseguro/checkout/">PagSeguro
+                                                        Checkout</a></li>
+                                                <li class="page_item page-item-24"><a
+                                                        href="https://pix.ctec.com.br/pagseguro/direct-payment/">PagSeguro
+                                                        Checkout Transparente</a></li>
+                                                <li class="page_item page-item-26"><a
+                                                        href="https://pix.ctec.com.br/pagseguro/order-error/">PagSeguro
+                                                        Erro</a></li>
+                                                <li class="page_item page-item-25"><a
+                                                        href="https://pix.ctec.com.br/pagseguro/order-confirmation/">PagSeguro
+                                                        Ordem Recebida</a></li>
+                                                <li class="page_item page-item-2"><a
+                                                        href="https://pix.ctec.com.br/sample-page/">Sample Page</a></li>
+                                                <li class="page_item page-item-69"><a
+                                                        href="https://pix.ctec.com.br/teste-agora/">Teste Agora!</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-menu-sidebar-overlay hfg-ov"></div>
+            </div>
+        </header>
+
+
+
+
+        <main id="content" class="neve-main" role="main">
+
+            <div class="container single-page-container">
+                <div class="row">
+                    <div class="nv-single-page-wrap col">
+                        <div class="nv-page-title-wrap nv-big-title">
+                            <div class="nv-page-title ">
+                                <h1>Formulário de Cadastro</h1>
+                            </div>
+                            <!--.nv-page-title-->
+                        </div>
+                        <!--.nv-page-title-wrap-->
+                        <div class="nv-content-wrap entry-content">
+                            <div class="wp-container-3 wp-block-group">
+                                <div class="wp-block-group__inner-container">
+                                    <div class="wp-container-2 wp-block-columns">
+                                        <div class="wp-container-1 wp-block-column" style="flex-basis:100%">
+                                            <div role="form" class="wpcf7" id="wpcf7-f78-p50-o1" lang="pt-PT" dir="ltr">
+                                                <div class="screen-reader-response">
+                                                    <p role="status" aria-live="polite" aria-atomic="true"></p>
+                                                    <ul></ul>
+                                                </div>
+                                                <form action="/contact-form/#wpcf7-f78-p50-o1" method="post"
+                                                    class="wpcf7-form init" novalidate="novalidate" data-status="init">
+                                                    <div style="display: none;">
+                                                        <input type="hidden" name="_wpcf7" value="78" />
+                                                        <input type="hidden" name="_wpcf7_version" value="5.5.6" />
+                                                        <input type="hidden" name="_wpcf7_locale" value="pt_PT" />
+                                                        <input type="hidden" name="_wpcf7_unit_tag"
+                                                            value="wpcf7-f78-p50-o1" />
+                                                        <input type="hidden" name="_wpcf7_container_post" value="50" />
+                                                        <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+                                                    </div>
+                                                    <p><label> Nome: <b style="color:red">*</b><br />
+                                                            <span class="wpcf7-form-control-wrap atr-nome"><input
+                                                                    type="text" name="atr-nome" value="paulo" size="40"
+                                                                    class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                                                                    id="atr-nome" aria-required="true"
+                                                                    aria-invalid="false" /></span></label> </p>
+                                                    <p><label> CPF/CNPJ: <b style="color:red">*</b><br />
+                                                            <span class="wpcf7-form-control-wrap atr-cpf"><input
+                                                                    type="text" name="atr-cpf" value="" size="40"
+                                                                    class="wpcf7-form-control wpcf7-text" id="2"
+                                                                    aria-invalid="false" /></span></label></p>
+                                                    <div class="h-captcha"
+                                                        data-sitekey="af4fc5a3-1ac5-4e6d-819d-324d412a5e9d"></div>
+                                                    <p><label> Fantasia: <b style="color:red">*</b><br />
+                                                            <span class="wpcf7-form-control-wrap atr-fantasia"><input
+                                                                    type="text" name="atr-fantasia" value="" size="40"
+                                                                    class="wpcf7-form-control wpcf7-text" id="3"
+                                                                    aria-invalid="false" /></span></label></p>
+                                                    <p><label> Razão Social: <b style="color:red">*</b><br />
+                                                            <span class="wpcf7-form-control-wrap atr-razao"><input
+                                                                    type="text" name="atr-razao" value="" size="40"
+                                                                    class="wpcf7-form-control wpcf7-text" id="4"
+                                                                    aria-invalid="false" /></span></label></p>
+                                                    <p><label> Inscrição Municipal: <b style="color:red">*</b><br />
+                                                            <span
+                                                                class="wpcf7-form-control-wrap atr-inc-municipal"><input
+                                                                    type="text" name="atr-inc-municipal" value=""
+                                                                    size="40" class="wpcf7-form-control wpcf7-text"
+                                                                    id="5" aria-invalid="false" /></span></label></p>
+                                                    <p><label> Inscrição Estadual: <b style="color:red">*</b><br />
+                                                            <span
+                                                                class="wpcf7-form-control-wrap atr-inc-estadual"><input
+                                                                    type="text" name="atr-inc-estadual" value=""
+                                                                    size="40" class="wpcf7-form-control wpcf7-text"
+                                                                    id="6" aria-invalid="false" /></span></label></p>
+                                                    <p><label> Categoria: <b style="color:red">*</b><br />
+                                                            <span
+                                                                class="wpcf7-form-control-wrap atr-categoria-emp"><select
+                                                                    name="atr-categoria-emp"
+                                                                    class="wpcf7-form-control wpcf7-select" id="20"
+                                                                    aria-invalid="false">
+                                                                    <option value="">---</option>
+                                                                </select></span></label></p>
+                                                    <p><label> Seguimento: <b style="color:red">*</b><br />
+                                                            <span
+                                                                class="wpcf7-form-control-wrap atr-seguimento-emp"><select
+                                                                    name="atr-seguimento-emp"
+                                                                    class="wpcf7-form-control wpcf7-select" id="21"
+                                                                    aria-invalid="false">
+                                                                    <option value="">---</option>
+                                                                </select></span></label> </p>
+                                                    <p><label> Telefone: <b style="color:red">*</b><br />
+                                                            <span class="wpcf7-form-control-wrap atr-telefone1"><input
+                                                                    type="text" name="atr-telefone1" value="" size="40"
+                                                                    class="wpcf7-form-control wpcf7-text" id="7"
+                                                                    aria-invalid="false" /></span></label></p>
+                                                    <p><label> Celular: <b style="color:red">*</b><br />
+                                                            <span class="wpcf7-form-control-wrap atr-celular1"><input
+                                                                    type="text" name="atr-celular1" value="" size="40"
+                                                                    class="wpcf7-form-control wpcf7-text" id="8"
+                                                                    aria-invalid="false" /></span></label></p>
+                                                    <p><label> Email: <b style="color:red">*</b><br />
+                                                            <span class="wpcf7-form-control-wrap atr-email1"><input
+                                                                    type="email" name="atr-email1" value="" size="40"
+                                                                    class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email"
+                                                                    id="9" aria-invalid="false"
+                                                                    placeholder="Insira seu endereço de email" /></span>
+                                                        </label></p>
+                                                    <p><label> Observação Contato: <b style="color:red">*</b><br />
+                                                            <span class="wpcf7-form-control-wrap atr-tx-contato1"><input
+                                                                    type="email" name="atr-tx-contato1" value=""
+                                                                    size="40"
+                                                                    class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email"
+                                                                    id="15" aria-invalid="false" /></span> </label></p>
+                                                    <p><label> Telefone: <b style="color:red">*</b><br />
+                                                            <span class="wpcf7-form-control-wrap atr-telefone2"><input
+                                                                    type="text" name="atr-telefone2" value="" size="40"
+                                                                    class="wpcf7-form-control wpcf7-text" id="16"
+                                                                    aria-invalid="false" /></span></label></p>
+                                                    <p><label> Celular: <b style="color:red">*</b><br />
+                                                            <span class="wpcf7-form-control-wrap atr-celular2"><input
+                                                                    type="text" name="atr-celular2" value="" size="40"
+                                                                    class="wpcf7-form-control wpcf7-text" id="17"
+                                                                    aria-invalid="false" /></span></label></p>
+                                                    <p><label> Email: <b style="color:red">*</b><br />
+                                                            <span class="wpcf7-form-control-wrap atr-email2"><input
+                                                                    type="email" name="atr-email2" value="" size="40"
+                                                                    class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email"
+                                                                    id="18" aria-invalid="false"
+                                                                    placeholder="Insira seu endereço de email" /></span>
+                                                        </label></p>
+                                                    <p><label> Observação Contato: <b style="color:red">*</b><br />
+                                                            <span class="wpcf7-form-control-wrap atr-tx-contato2"><input
+                                                                    type="email" name="atr-tx-contato2" value=""
+                                                                    size="40"
+                                                                    class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email"
+                                                                    id="19" aria-invalid="false" /></span> </label></p>
+                                                    <p><label> CEP: <b style="color:red">*</b><br />
+                                                            <span class="wpcf7-form-control-wrap atr-cep"><input
+                                                                    type="text" name="atr-cep" value="" size="40"
+                                                                    class="wpcf7-form-control wpcf7-text" id="10"
+                                                                    aria-invalid="false" /></span></label></p>
+                                                    <p><label> Endereço: <b style="color:red">*</b><br />
+                                                            <span class="wpcf7-form-control-wrap atr-endereco"><input
+                                                                    type="text" name="atr-endereco" value="" size="40"
+                                                                    class="wpcf7-form-control wpcf7-text" id="11"
+                                                                    aria-invalid="false" /></span></label></p>
+                                                    <p><label> Bairro: <b style="color:red">*</b><br />
+                                                            <span class="wpcf7-form-control-wrap atr-bairro"><input
+                                                                    type="text" name="atr-bairro" value="" size="40"
+                                                                    class="wpcf7-form-control wpcf7-text" id="12"
+                                                                    aria-invalid="false" /></span></label></p>
+                                                    <p><label> Número: <b style="color:red">*</b><br />
+                                                            <span class="wpcf7-form-control-wrap atr-numero"><input
+                                                                    type="text" name="atr-numero" value="" size="40"
+                                                                    class="wpcf7-form-control wpcf7-text" id="13"
+                                                                    aria-invalid="false" /></span></label></p>
+                                                    <p><label> Estado: <b style="color:red">*</b><br />
+                                                            <span class="wpcf7-form-control-wrap atr-estado"><select
+                                                                    name="atr-estado"
+                                                                    class="wpcf7-form-control wpcf7-select" id="22"
+                                                                    aria-invalid="false">
+                                                                    <option value="">---</option>
+                                                                </select></span></label></p>
+                                                    <p><label> Cidade: <b style="color:red">*</b><br />
+                                                            <span class="wpcf7-form-control-wrap atr-cidade"><select
+                                                                    name="atr-cidade"
+                                                                    class="wpcf7-form-control wpcf7-select" id="23"
+                                                                    aria-invalid="false">
+                                                                    <option value="">---</option>
+                                                                </select></span></label> </p>
+                                                    <p><label> País: <b style="color:red">*</b><br />
+                                                            <span class="wpcf7-form-control-wrap atr-pais"><select
+                                                                    name="atr-pais"
+                                                                    class="wpcf7-form-control wpcf7-select" id="24"
+                                                                    aria-invalid="false">
+                                                                    <option value="">---</option>
+                                                                    <option value="opcao 1">opcao 1</option>
+                                                                    <option value="opcao 2">opcao 2</option>
+                                                                </select></span></label> </p>
+                                                    <p><label> Complemento: <b style="color:red">*</b><br />
+                                                            <span class="wpcf7-form-control-wrap atr-complemento"><input
+                                                                    type="text" name="atr-complemento" value=""
+                                                                    size="40" class="wpcf7-form-control wpcf7-text"
+                                                                    id="14" aria-invalid="false" /></span></label></p>
+                                                    <p><label> Observação Endereço: <b style="color:red">*</b><br />
+                                                            <span class="wpcf7-form-control-wrap atr-tx-endereco"><input
+                                                                    type="text" name="atr-tx-endereco" value=""
+                                                                    size="40" class="wpcf7-form-control wpcf7-text"
+                                                                    id="20" aria-invalid="false" /></span></label></p>
+                                                    <p><input class="button" type="button" id="101" value="Enviar" /></p>
+                                                    <div class="wpcf7-response-output" aria-hidden="true"></div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <p>[show_user_ip]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        <!--/.neve-main-->
+
+        <footer class="site-footer" id="site-footer" next-page-hide>
+            <div class="hfg_footer">
+                <div class="footer--row footer-bottom layout-full-contained" id="cb-row--footer-bottom"
+                    data-row-id="bottom" data-show-on="desktop">
+                    <div class="footer--row-inner footer-bottom-inner footer-content-wrap">
+                        <div class="container">
+                            <div class="hfg-grid nv-footer-content hfg-grid-bottom row--wrapper row "
+                                data-section="hfg_footer_layout_bottom">
+                                <div class="hfg-slot left">
+                                    <div class="builder-item desktop-left tablet-left mobile-left">
+                                        <div class="item--inner builder-item--footer_copyright"
+                                            data-section="footer_copyright" data-item-id="footer_copyright">
+                                            <div class="component-wrap">
+                                                <div>
+                                                    <p><a href="https://www.ctec.com.br/"
+                                                            rel="nofollow">CTEC</a> <a
+                                                            href="https://www.ctec.com.br/">| Informática</a></p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="hfg-slot c-left"></div>
+                                <div class="hfg-slot center"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+    </div>
+    <!--/.wrapper-->
+    <script type="text/javascript">
+        (function () {
+            var c = document.body.className;
+            c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+            document.body.className = c;
+        })();
+    </script>
+    <style>
+        .wp-container-1>.alignleft {
+            float: left;
+            margin-inline-start: 0;
+            margin-inline-end: 2em;
+        }
+
+        .wp-container-1>.alignright {
+            float: right;
+            margin-inline-start: 2em;
+            margin-inline-end: 0;
+        }
+
+        .wp-container-1>.aligncenter {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+    </style>
+    <style>
+        .wp-container-2 {
+            display: flex;
+            gap: 2em;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+
+        .wp-container-2>* {
+            margin: 0;
+        }
+    </style>
+    <style>
+        .wp-container-3>.alignleft {
+            float: left;
+            margin-inline-start: 0;
+            margin-inline-end: 2em;
+        }
+
+        .wp-container-3>.alignright {
+            float: right;
+            margin-inline-start: 2em;
+            margin-inline-end: 0;
+        }
+
+        .wp-container-3>.aligncenter {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+    </style>
+    <script type='text/javascript'
+        src='https://pix.ctec.com.br/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.6.2.2'
+        id='jquery-blockui-js'></script>
+    <script type='text/javascript'
+        src='https://pix.ctec.com.br/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.6.2.2'
+        id='js-cookie-js'></script>
+    <script type='text/javascript' id='woocommerce-js-extra'>
+        /* <![CDATA[ */
+        var woocommerce_params = { "ajax_url": "\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/?wc-ajax=%%endpoint%%" };
+/* ]]> */
+    </script>
+    <script type='text/javascript'
+        src='https://pix.ctec.com.br/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=6.2.2'
+        id='woocommerce-js'></script>
+    <script type='text/javascript' id='wc-cart-fragments-js-extra'>
+        /* <![CDATA[ */
+        var wc_cart_fragments_params = { "ajax_url": "\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/?wc-ajax=%%endpoint%%", "cart_hash_key": "wc_cart_hash_3b86d516f2722e1bda85a6a591b81545", "fragment_name": "wc_fragments_3b86d516f2722e1bda85a6a591b81545", "request_timeout": "5000" };
+/* ]]> */
+    </script>
+    <script type='text/javascript'
+        src='https://pix.ctec.com.br/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=6.2.2'
+        id='wc-cart-fragments-js'></script>
+    <script type='text/javascript' id='wc-cart-fragments-js-after'>
+        jQuery('body').bind('wc_fragments_refreshed', function () {
+            var jetpackLazyImagesLoadEvent;
+            try {
+                jetpackLazyImagesLoadEvent = new Event('jetpack-lazy-images-load', {
+                    bubbles: true,
+                    cancelable: true
+                });
+            } catch (e) {
+                jetpackLazyImagesLoadEvent = document.createEvent('Event')
+                jetpackLazyImagesLoadEvent.initEvent('jetpack-lazy-images-load', true, true);
+            }
+            jQuery('body').get(0).dispatchEvent(jetpackLazyImagesLoadEvent);
+        });
+
+    </script>
+    <script type='text/javascript' id='neve-script-js-extra'>
+        /* <![CDATA[ */
+        var NeveProperties = { "ajaxurl": "https:\/\/pix.ctec.com.br\/wp-admin\/admin-ajax.php", "nonce": "03f756e96b", "isRTL": "", "isCustomize": "" };
+/* ]]> */
+    </script>
+    <script type='text/javascript'
+        src='https://pix.ctec.com.br/wp-content/themes/neve/assets/js/build/modern/frontend.js?ver=3.2.3'
+        id='neve-script-js' async></script>
+    <script type='text/javascript' id='neve-script-js-after'>
+        var html = document.documentElement;
+        var theme = html.getAttribute('data-neve-theme') || 'light';
+        var variants = { "logo": { "light": { "src": false, "srcset": false, "sizes": false }, "dark": { "src": false, "srcset": false, "sizes": false }, "same": true } };
+
+        function setCurrentTheme(theme) {
+            var pictures = document.getElementsByClassName('neve-site-logo');
+            for (var i = 0; i < pictures.length; i++) {
+                var picture = pictures.item(i);
+                if (!picture) {
+                    continue;
+                };
+                var fileExt = picture.src.slice((Math.max(0, picture.src.lastIndexOf(".")) || Infinity) + 1);
+                if (fileExt === 'svg') {
+                    picture.removeAttribute('width');
+                    picture.removeAttribute('height');
+                    picture.style = 'width: var(--maxWidth)';
+                }
+                var compId = picture.getAttribute('data-variant');
+                if (compId && variants[compId]) {
+                    var isConditional = variants[compId]['same'];
+                    if (theme === 'light' || isConditional || variants[compId]['dark']['src'] === false) {
+                        picture.src = variants[compId]['light']['src'];
+                        picture.srcset = variants[compId]['light']['srcset'] || '';
+                        picture.sizes = variants[compId]['light']['sizes'];
+                        continue;
+                    };
+                    picture.src = variants[compId]['dark']['src'];
+                    picture.srcset = variants[compId]['dark']['srcset'] || '';
+                    picture.sizes = variants[compId]['dark']['sizes'];
+                };
+            };
+        };
+
+        var observer = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutation) {
+                if (mutation.type == 'attributes') {
+                    theme = html.getAttribute('data-neve-theme');
+                    setCurrentTheme(theme);
+                };
+            });
+        });
+
+        observer.observe(html, {
+            attributes: true
+        });
+    </script>
+    <script type='text/javascript' src='https://pix.ctec.com.br/wp-includes/js/comment-reply.min.js?ver=6.0.2'
+        id='comment-reply-js'></script>
+    <script src='https://stats.wp.com/e-202239.js' defer></script>
+    <script>
+        _stq = window._stq || [];
+        _stq.push(['view', { v: 'ext', j: '1:11.0', blog: '207891272', post: '50', tz: '0', srv: 'pix.ctec.com.br' }]);
+        _stq.push(['clickTrackerInit', '207891272', '50']);
+    </script>
+</body>
+
+</html>
