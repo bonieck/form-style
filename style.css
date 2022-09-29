@@ -8,10 +8,6 @@
     
 }
 
-.body {
-    background: #000;
-}
-
 .nv-page-title h1::after{
     content: '';
     display: block;
